@@ -1,113 +1,98 @@
-# Theme based on the Homer Walkxcode
-# Creator: @ulysnep
+---
 
-ulysnep-dark-mode:
+hass-theme-ulysnep:
 
-  # Header:
-  app-header-background-color: rgb(0, 0, 0)
-  app-header-text-color: rgb(229, 229, 234)
-  app-header-selection-bar-color: var(--primary-color)
-  app-header-edit-background-color: rgb(72, 72, 74)
-
-  # Main Interface Colors
-  primary-color: rgb(10, 132, 255)
-  primary-background-color: rgb(0, 0, 0)
-  secondary-background-color: rgb(44, 44, 46)
-  divider-color: rgb(44, 44, 46)
-  accent-color: rgb(10, 132, 255)
+  # Global
+  background-image: "center / cover no-repeat fixed url('/hacsfiles/themes/ios-themes/homekit-bg-dark-green.jpg')"
+  lovelace-background: var(--background-image)
+  primary-color: "#ff9409"  # from Apple systemOrange light mode
+  light-primary-color: "#2c2c2e"  # (icons on left menu) (light: systemGray5 from iOS dark mode, dark: XXX)
+  primary-background-color: "#e5e5ea"  # systemGray5 light mode
+  secondary-background-color: rgba(255, 255, 255, 0.9)
+  divider-color: rgba(142, 142, 147, 0.3)  # from Apple systemGray light mode
+  accent-color: rgba(255, 159, 9, 1)
 
   # Text
-  primary-text-color: rgb(242, 242, 247)
-  secondary-text-color: rgb(174, 174, 178)
-  text-primary-color: var(--primary-text-color)
-  disabled-text-color: rgb(72, 72, 74)
+  primary-text-color: "#464a47"
+  secondary-text-color: "#000000"
+  text-primary-color: "#FFF"
+  disabled-text-color: "#555"  # XXX: https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/2
+  text-dark-color: "#FFF"
 
   # Sidebar Menu
-  sidebar-icon-color: rgb(199, 199, 204)
-  sidebar-text-color: var(--primary-text-color)
-  sidebar-background-color: rgb(28, 28, 30)
+  sidebar-background-color: var(--primary-background-color)
+  sidebar-icon-color: var(--light-primary-color)
+  sidebar-text-color: var(--light-primary-color)
   sidebar-selected-background-color: var(--primary-background-color)
-  sidebar-selected-icon-color: rgb(10, 132, 255)
-  sidebar-selected-text-color: var(--sidebar-selected-icon-color))
-
-  # Buttons
-  paper-item-icon-color: rgb(174, 174, 178)
-  paper-item-icon-active-color: rgb(10, 132, 255)
-  mdc-button-outline-color: rgb(10, 132, 255)
+  sidebar-selected-icon-color: "#8e8e93"  # (light: systemGray5 from iOS light mode, dark: XXX)
+  sidebar-selected-text-color: var(--sidebar-selected-icon-color)
 
   # States and Badges
-  state-icon-color: var(--paper-item-icon-color)
-  state-icon-active-color: var(--paper-item-icon-active-color)
+  state-icon-color: "#FFF"
+  state-icon-active-color: "#333333"  # or make light icons yellow when active: rgba(255, 214, 10, 1)
   state-icon-unavailable-color: var(--disabled-text-color)
+  paper-item-icon-active-color: "#333333"  # see https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/30
 
   # Sliders
-  paper-slider-knob-color: rgb(242, 242, 247)
+  paper-slider-knob-color: "#FFFFFF"
   paper-slider-knob-start-color: var(--paper-slider-knob-color)
-  paper-slider-pin-color: rgb(10, 132, 255)
-  paper-slider-active-color: rgb(10, 132, 255)
-  paper-slider-secondary-color: var(--paper-slider-active-color)
+  paper-slider-pin-color: var(--paper-slider-knob-color)
+  paper-slider-active-color: "#007aff"  # from Apple systemBlue light mode
+  paper-slider-secondary-color: var(--paper-slider-knob-color)
+  paper-slider-container-color: rgba(255, 255, 255, 0.5)
+  paper-slider-font-color: "#000"
+  ha-slider-background: none !important
 
   # Labels
-  label-badge-background-color: var(--secondary-background-color)
-  label-badge-text-color: var(--primary-text-color)
-  label-badge-red: rgb(255, 69, 58)
-  label-badge-green: rgb(48, 209, 88)
-  label-badge-blue: rgb(10, 132, 255)
-  label-badge-yellow: rgb(255, 214, 10)
-  label-badge-gray: rgb(72, 72, 74)
+  label-badge-background-color: "#23232E"
+  label-badge-text-color: "#F1F1F1"
+  label-badge-red: rgba(255, 149, 9, 0.7)  # from Apple systemOrange light mode
 
   # Cards
-  card-background-color: rgb(28, 28, 30)
-  ha-card-background: rgb(28, 28, 30)
-  ha-card-border-color: rgb(38, 38, 30)
-  paper-dialog-background-color: var(--card-background-color)
-  paper-listbox-background-color: var(--card-background-color)
-  paper-card-background-color: var(--card-background-color)
-
-  # Switches
-  switch-checked-button-color: rgb(242, 242, 247)
-  switch-checked-track-color:  rgb(48, 209, 88)
-  switch-unchecked-button-color: rgb(242, 242, 247)
-  switch-unchecked-track-color: rgb(99, 99, 102)
+  card-background-color: var(--secondary-background-color)  # Unused entities table background
+  paper-listbox-background-color: var(--primary-background-color)
+  ha-card-border-radius: 20px
+  ha-card-background: rgba(245, 245, 245, 0.4)
+  paper-card-background-color: var(--ha-card-background)
+  ha-card-border-width: 0  # https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/82#event-7732695357
 
   # Toggles
-  paper-toggle-button-checked-button-color: var(--switch-checked-button-color)
-  paper-toggle-button-checked-bar-color: var(--switch-checked-track-color)
-  paper-toggle-button-unchecked-button-color: var(--switch-unchecked-button-color)
-  paper-toggle-button-unchecked-bar-color: var(--switch-unchecked-track-color)
+  paper-toggle-button-checked-button-color: "#484848"
+  paper-toggle-button-checked-bar-color: "#484848"
+  paper-toggle-button-unchecked-button-color: var(--paper-toggle-button-checked-button-color)
+  paper-toggle-button-unchecked-bar-color: var(--disabled-text-color)
 
-  # Table
-  table-row-background-color: rgb(28, 28, 30)
-  table-row-alternative-background-color: rgb(44, 44, 46)
-  data-table-background-color: rgb(0, 0, 0)
+  # Table row
+  table-row-background-color: var(--primary-background-color)
+  table-row-alternative-background-color: var(--secondary-background-color)
 
-  # Dropdowns
-  material-background-color: rgb(28, 28, 30)
-  material-secondary-background-color: rgb(44, 44, 46)
-  mdc-theme-surface: var(--secondary-background-color)
+  # Switches
+  switch-checked-color: "#30d257"  # XXX: remove when https://github.com/home-assistant/home-assistant-polymer/pull/4203 is in HA
+  switch-checked-track-color: "#34c759"  # from Apple systemGreen light mode
+  switch-checked-button-color: "#FFF"
 
-  # Pre/Code
-  markdown-code-background-color: rgb(58, 58, 60)
-  code-editor-background-color: rgb(58, 58, 60)
+  # Other
+  paper-dialog-background-color: rgba(200, 200, 200, 0.8)  # e.g., background of more-info
+  paper-item-icon-color: "#333333"  # also should mini-media-player icon white (but doesn't work by itself)
+  more-info-header-background: rgba(230, 230, 230, 0.5)
+  lumo-body-text-color: var(--primary-text-color)  # see https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/42
+  app-header-background-color: rgba(48, 89, 71, 0.4)
+  markdown-code-background-color: "#FFFFFF"
+  code-editor-background-color: "#FFF"
 
-  # Checkboxes
-  mdc-checkbox-unchecked-color: rgb(174, 174, 178)
-  mdc-checkbox-disable-color: var(--disabled-text-color)
-  mdc-select-fill-color: rgb(28, 28, 30)
-  mdc-select-ink-color: var(--primary-text-color)
-  mdc-select-label-ink-color: var(--secondary-text-color)
-  mdc-select-idle-line-color: var(--primary-text-color)
-  mdc-select-dropdown-icon-color: var(--secondary-text-color)
-  mdc-select-hover-line-color: var(--accent-color)
+  # Custom
+  mcg-title-letter-spacing: .15em
+  mini-media-player-base-color: white
+  mini-media-player-icon-color: white
 
-  # Input
-  input-fill-color: var(--secondary-background-color)
-  input-dropdown-icon-color: var(--secondary-text-color)
+  # Added for https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/72
+  # TODO: add description for lines below. Suggested in https://github.com/basnijholt/lovelace-ios-dark-mode-theme/issues/72
   input-ink-color: var(--primary-text-color)
-  input-label-ink-color: var(--secondary-text-color)
-  input-idle-line-color: var(--primary-text-color)
-  input-hover-line-color: var(--accent-color)
-
-  # RGB
-  rgb-primary-text-color: 242, 242, 247
-  rgb-primary-color: 242, 242, 247
+  input-fill-color: transparent
+  input-disabled-fill-color: transparent
+  input-label-ink-color: var(--primary-text-color)
+  input-disabled-ink-color: var(--disabled-text-color)
+  input-dropdown-icon-color: var(--primary-text-color)
+  input-idle-line-color: var(--secondary-text-color)
+  input-hover-line-color: var(--secondary-text-color)
+  codemirror-property: var(--accent-color)
